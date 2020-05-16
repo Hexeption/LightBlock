@@ -12,7 +12,7 @@
     "sources": "https://github.com/Hexeption/LightBlock"
   },
   "license": "CC0-1.0",
-  "icon": "assets/template/icon.png",
+  "icon": "assets/lightblock/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [

@@ -18,12 +18,37 @@
 
 package dev.hexeption.lightblock;
 
+import dev.hexeption.lightblock.block.BlockLight;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.minecraft.block.Block;
+import net.minecraft.block.Block.Settings;
+import net.minecraft.block.Blocks;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class LightBlock implements ModInitializer {
 
+    public static final String MOD_ID = "lightblock";
+
+    public static Identifier id(String name) {
+        return new Identifier(MOD_ID, name);
+    }
+
+
+    public static final Block blockLight = new BlockLight(Settings.copy(Blocks.BARRIER).noCollision());
+
+    public static final ItemGroup GROUP = FabricItemGroupBuilder.build(id("group"), () -> new ItemStack(blockLight));
+
+    public static final BlockItem blockLightItem = new BlockItem(blockLight, new Item.Settings().group(GROUP));
+
     @Override
     public void onInitialize() {
-        System.out.println("Loading Light Block");
+        Registry.register(Registry.BLOCK, id("light_block"), blockLight);
+        Registry.register(Registry.ITEM, id("light_block"), blockLightItem);
     }
 }

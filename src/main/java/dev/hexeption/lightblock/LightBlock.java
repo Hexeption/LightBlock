@@ -16,14 +16,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ******************************************************************************/
 
-package dev.hexeption.template;
+package dev.hexeption.lightblock;
 
 import net.fabricmc.api.ModInitializer;
 
-public class Template implements ModInitializer {
+public class LightBlock implements ModInitializer {
 
     @Override
     public void onInitialize() {
-
+        System.out.println("Loading Light Block");
     }
 }

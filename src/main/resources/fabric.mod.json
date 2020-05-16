@@ -1,26 +1,26 @@
 {
   "schemaVersion": 1,
-  "id": "template",
+  "id": "lightblock",
   "version": "${version}",
-  "name": "Template",
-  "description": "A template for Fabric Mods ",
+  "name": "Light Block",
+  "description": "Implements the Light Block from Bedrock into Fabric",
   "authors": [
     "Hexeption"
   ],
   "contact": {
     "homepage": "https://hexeption.dev",
-    "sources": "https://github.com/Hexeption/Hex-Fabric-Template"
+    "sources": "https://github.com/Hexeption/LightBlock"
   },
   "license": "CC0-1.0",
   "icon": "assets/template/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "dev.hexeption.template.Template"
+      "dev.hexeption.lightblock.LightBlock"
     ]
   },
   "mixins": [
-    "template.mixins.json"
+    "lightblock.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.8.2+build.194",

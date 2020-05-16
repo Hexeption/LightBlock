@@ -102,11 +102,11 @@ curseforge {
     }
     project {
         id = '000000'
-        changelog = 'A changelog can be found at https://github.com/Hexeption/Hex-Fabric-Template'
+        changelog = 'A changelog can be found at https://github.com/Hexeption/LightBlock'
         releaseType = 'beta'
         addGameVersion '1.15'
         mainArtifact(remapJar) {
-            displayName = "Template v$version for $project.minecraft_version"
+            displayName = "LightBlock v$version for $project.minecraft_version"
         }
         afterEvaluate {
             uploadTask.dependsOn("remapJar")

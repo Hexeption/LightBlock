@@ -101,7 +101,7 @@ curseforge {
         apiKey = project.getProperty('curse_api_key')
     }
     project {
-        id = '000000'
+        id = '383801'
         changelog = 'A changelog can be found at https://github.com/Hexeption/LightBlock'
         releaseType = 'beta'
         addGameVersion '1.15'

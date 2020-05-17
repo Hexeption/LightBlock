@@ -17,6 +17,9 @@
   "entrypoints": {
     "main": [
       "dev.hexeption.lightblock.LightBlock"
+    ],
+    "client": [
+      "dev.hexeption.lightblock.LightBlockClient"
     ]
   },
   "mixins": [

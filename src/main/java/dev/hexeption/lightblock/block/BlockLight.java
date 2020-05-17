@@ -22,7 +22,7 @@ import dev.hexeption.lightblock.registry.LBlocks;
 import net.minecraft.block.BarrierBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.EntityContext;
+import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.state.StateManager.Builder;
 import net.minecraft.state.property.IntProperty;
@@ -51,7 +51,7 @@ public class BlockLight extends BarrierBlock {
     }
 
     @Override
-    public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, EntityContext context) {
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         if (context.isHolding(LBlocks.blockLight_0.asItem()) || context.isHolding(LBlocks.blockLight_1.asItem()) ||
             context.isHolding(LBlocks.blockLight_2.asItem()) || context.isHolding(LBlocks.blockLight_3.asItem()) ||
             context.isHolding(LBlocks.blockLight_4.asItem()) || context.isHolding(LBlocks.blockLight_5.asItem()) ||
@@ -60,7 +60,7 @@ public class BlockLight extends BarrierBlock {
             context.isHolding(LBlocks.blockLight_10.asItem()) || context.isHolding(LBlocks.blockLight_11.asItem()) ||
             context.isHolding(LBlocks.blockLight_12.asItem()) || context.isHolding(LBlocks.blockLight_13.asItem()) ||
             context.isHolding(LBlocks.blockLight_14.asItem()) || context.isHolding(LBlocks.blockLight_15.asItem())) {
-            return super.getOutlineShape(state, view, pos, context);
+            return super.getOutlineShape(state, world, pos, context);
         } else {
             return VoxelShapes.empty();
         }
@@ -75,14 +75,11 @@ public class BlockLight extends BarrierBlock {
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (state.get(lightLevel) + 1 == 16) {
             world.setBlockState(pos, state.with(lightLevel, 0));
+            this.settings.lightLevel(value -> 0);
         } else {
             world.setBlockState(pos, state.with(lightLevel, state.get(lightLevel) + 1));
+            this.settings.lightLevel(value -> state.get(lightLevel) + 1);
         }
         return ActionResult.SUCCESS;
-    }
-
-    @Override
-    public int getLuminance(BlockState state) {
-        return state.get(lightLevel);
     }
 }

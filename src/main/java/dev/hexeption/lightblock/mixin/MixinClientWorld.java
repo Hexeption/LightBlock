@@ -23,20 +23,18 @@ import dev.hexeption.lightblock.registry.LBlocks;
 import dev.hexeption.lightblock.registry.LParticles;
 import java.util.List;
 import java.util.Random;
-import java.util.function.BiFunction;
+import java.util.function.Supplier;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockState;
+import net.minecraft.class_5269;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.util.math.BlockPos.Mutable;
 import net.minecraft.util.profiler.Profiler;
 import net.minecraft.world.World;
-import net.minecraft.world.chunk.ChunkManager;
-import net.minecraft.world.dimension.Dimension;
 import net.minecraft.world.dimension.DimensionType;
-import net.minecraft.world.level.LevelProperties;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -62,10 +60,8 @@ public abstract class MixinClientWorld extends World {
     @Final
     private MinecraftClient client;
 
-    protected MixinClientWorld(LevelProperties levelProperties, DimensionType dimensionType,
-        BiFunction<World, Dimension, ChunkManager> chunkManagerProvider, Profiler profiler,
-        boolean isClient) {
-        super(levelProperties, dimensionType, chunkManagerProvider, profiler, isClient);
+    protected MixinClientWorld(class_5269 arg, DimensionType dimensionType, Supplier<Profiler> supplier, boolean bl, boolean bl2, long l) {
+        super(arg, dimensionType, supplier, bl, bl2, l);
     }
 
     @Inject(method = "randomBlockDisplayTick", at = @At("RETURN"))

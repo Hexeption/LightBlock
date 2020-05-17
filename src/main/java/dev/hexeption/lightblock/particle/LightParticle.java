@@ -23,10 +23,10 @@ import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleFactory;
 import net.minecraft.client.particle.ParticleTextureSheet;
 import net.minecraft.client.particle.SpriteBillboardParticle;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.particle.DefaultParticleType;
-import net.minecraft.world.World;
 
 /**
  * LightParticle
@@ -36,7 +36,7 @@ import net.minecraft.world.World;
  */
 public class LightParticle extends SpriteBillboardParticle {
 
-    protected LightParticle(World world, double x, double y, double z, ItemConvertible itemConvertible) {
+    protected LightParticle(ClientWorld world, double x, double y, double z, ItemConvertible itemConvertible) {
         super(world, x, y, z);
         this.setSprite(MinecraftClient.getInstance().getItemRenderer().getModels().getSprite(itemConvertible));
         this.gravityStrength = 0.0F;
@@ -60,10 +60,9 @@ public class LightParticle extends SpriteBillboardParticle {
             theItem = item;
         }
 
-        public Particle createParticle(DefaultParticleType defaultParticleType, World world, double d, double e, double f, double g, double h, double i) {
-            return new LightParticle(world, d, e, f, theItem);
+        @Override
+        public Particle createParticle(DefaultParticleType parameters, ClientWorld world, double x, double y, double z, double velocityX, double velocityY, double velocityZ) {
+            return new LightParticle(world, x, y, z, theItem);
         }
-
-
     }
 }

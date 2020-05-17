@@ -3,9 +3,9 @@
   "package": "dev.hexeption.lightblock.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MixinClientWorld"
   ],
   "client": [
+    "MixinClientWorld"
   ],
   "injectors": {
     "defaultRequire": 1

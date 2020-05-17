@@ -19,8 +19,10 @@
 package dev.hexeption.lightblock;
 
 import dev.hexeption.lightblock.block.BlockLight;
+import dev.hexeption.lightblock.particle.LightParticle.Factory;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.minecraft.block.Block;
 import net.minecraft.block.Block.Settings;
@@ -56,5 +58,5 @@ public class LightBlock implements ModInitializer {
         Registry.register(Registry.ITEM, id("light_block"), blockLightItem);
         Registry.register(Registry.PARTICLE_TYPE, id("light_block"), lightParticle);
     }
-
+    
 }

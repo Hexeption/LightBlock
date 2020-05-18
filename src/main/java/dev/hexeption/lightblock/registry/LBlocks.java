@@ -36,22 +36,22 @@ import net.minecraft.util.registry.Registry;
  */
 public class LBlocks {
 
-    public static final Block blockLight_0 = register("light_block_0", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision(), 0));
-    public static final Block blockLight_1 = register("light_block_1", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision(), 1));
-    public static final Block blockLight_2 = register("light_block_2", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision(), 2));
-    public static final Block blockLight_3 = register("light_block_3", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision(), 3));
-    public static final Block blockLight_4 = register("light_block_4", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision(), 4));
-    public static final Block blockLight_5 = register("light_block_5", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision(), 5));
-    public static final Block blockLight_6 = register("light_block_6", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision(), 6));
-    public static final Block blockLight_7 = register("light_block_7", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision(), 7));
-    public static final Block blockLight_8 = register("light_block_8", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision(), 8));
-    public static final Block blockLight_9 = register("light_block_9", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision(), 9));
-    public static final Block blockLight_10 = register("light_block_10", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision(), 10));
-    public static final Block blockLight_11 = register("light_block_11", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision(), 11));
-    public static final Block blockLight_12 = register("light_block_12", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision(), 12));
-    public static final Block blockLight_13 = register("light_block_13", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision(), 13));
-    public static final Block blockLight_14 = register("light_block_14", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision(), 14));
-    public static final Block blockLight_15 = register("light_block_15", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision(), 15));
+    public static final Block blockLight_0 = register("light_block_0", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision().lightLevel(value -> value.get(BlockLight.lightLevel)), 0));
+    public static final Block blockLight_1 = register("light_block_1", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision().lightLevel(value -> value.get(BlockLight.lightLevel)), 1));
+    public static final Block blockLight_2 = register("light_block_2", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision().lightLevel(value -> value.get(BlockLight.lightLevel)), 2));
+    public static final Block blockLight_3 = register("light_block_3", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision().lightLevel(value -> value.get(BlockLight.lightLevel)), 3));
+    public static final Block blockLight_4 = register("light_block_4", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision().lightLevel(value -> value.get(BlockLight.lightLevel)), 4));
+    public static final Block blockLight_5 = register("light_block_5", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision().lightLevel(value -> value.get(BlockLight.lightLevel)), 5));
+    public static final Block blockLight_6 = register("light_block_6", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision().lightLevel(value -> value.get(BlockLight.lightLevel)), 6));
+    public static final Block blockLight_7 = register("light_block_7", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision().lightLevel(value -> value.get(BlockLight.lightLevel)), 7));
+    public static final Block blockLight_8 = register("light_block_8", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision().lightLevel(value -> value.get(BlockLight.lightLevel)), 8));
+    public static final Block blockLight_9 = register("light_block_9", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision().lightLevel(value -> value.get(BlockLight.lightLevel)), 9));
+    public static final Block blockLight_10 = register("light_block_10", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision().lightLevel(value -> value.get(BlockLight.lightLevel)), 10));
+    public static final Block blockLight_11 = register("light_block_11", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision().lightLevel(value -> value.get(BlockLight.lightLevel)), 11));
+    public static final Block blockLight_12 = register("light_block_12", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision().lightLevel(value -> value.get(BlockLight.lightLevel)), 12));
+    public static final Block blockLight_13 = register("light_block_13", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision().lightLevel(value -> value.get(BlockLight.lightLevel)), 13));
+    public static final Block blockLight_14 = register("light_block_14", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision().lightLevel(value -> value.get(BlockLight.lightLevel)), 14));
+    public static final Block blockLight_15 = register("light_block_15", new BlockLight(Settings.copy(Blocks.BARRIER).noCollision().lightLevel(value -> value.get(BlockLight.lightLevel)), 15));
 
 
     public static void init() {

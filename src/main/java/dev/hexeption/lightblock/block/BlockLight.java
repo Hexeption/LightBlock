@@ -75,10 +75,8 @@ public class BlockLight extends BarrierBlock {
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (state.get(lightLevel) + 1 == 16) {
             world.setBlockState(pos, state.with(lightLevel, 0));
-            this.settings.lightLevel(value -> 0);
         } else {
             world.setBlockState(pos, state.with(lightLevel, state.get(lightLevel) + 1));
-            this.settings.lightLevel(value -> state.get(lightLevel) + 1);
         }
         return ActionResult.SUCCESS;
     }

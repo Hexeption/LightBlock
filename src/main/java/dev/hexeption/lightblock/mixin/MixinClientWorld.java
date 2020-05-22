@@ -27,12 +27,12 @@ import java.util.function.Supplier;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockState;
-import net.minecraft.class_5269;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.util.math.BlockPos.Mutable;
 import net.minecraft.util.profiler.Profiler;
+import net.minecraft.world.MutableWorldProperties;
 import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionType;
 import org.spongepowered.asm.mixin.Final;
@@ -60,8 +60,8 @@ public abstract class MixinClientWorld extends World {
     @Final
     private MinecraftClient client;
 
-    protected MixinClientWorld(class_5269 arg, DimensionType dimensionType, Supplier<Profiler> supplier, boolean bl, boolean bl2, long l) {
-        super(arg, dimensionType, supplier, bl, bl2, l);
+    protected MixinClientWorld(MutableWorldProperties mutableWorldProperties, DimensionType dimensionType, Supplier<Profiler> supplier, boolean bl, boolean bl2, long l) {
+        super(mutableWorldProperties, dimensionType, supplier, bl, bl2, l);
     }
 
     @Inject(method = "randomBlockDisplayTick", at = @At("RETURN"))

@@ -28,7 +28,7 @@ dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modCompile "net.fabricmc:fabric-loader:${project.loader_version}"
-    modCompile "io.github.prospector:modmenu:${project.mod_menu_version}"
+//    modCompile "io.github.prospector:modmenu:${project.mod_menu_version}"
 //    modCompile "uk.co.hexeption:DevWorld_1.16:1.+1.0.0+build.9"
 
     modCompile "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"

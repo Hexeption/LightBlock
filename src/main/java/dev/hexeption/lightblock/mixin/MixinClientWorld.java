@@ -61,9 +61,8 @@ public abstract class MixinClientWorld extends World {
     @Final
     private MinecraftClient client;
 
-    protected MixinClientWorld(MutableWorldProperties mutableWorldProperties, RegistryKey<World> registryKey,
-        RegistryKey<DimensionType> registryKey2, DimensionType dimensionType, Supplier<Profiler> profiler, boolean bl, boolean bl2, long l) {
-        super(mutableWorldProperties, registryKey, registryKey2, dimensionType, profiler, bl, bl2, l);
+    protected MixinClientWorld(MutableWorldProperties properties, RegistryKey<World> registryKey, DimensionType dimensionType, Supplier<Profiler> supplier, boolean bl, boolean bl2, long l) {
+        super(properties, registryKey, dimensionType, supplier, bl, bl2, l);
     }
 
     @Inject(method = "randomBlockDisplayTick", at = @At("RETURN"))

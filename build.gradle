@@ -105,7 +105,7 @@ curseforge {
         id = '383801'
         changelog = 'A changelog can be found at https://github.com/Hexeption/LightBlock'
         releaseType = 'beta'
-        addGameVersion '1.16'
+        addGameVersion '1.17'
         mainArtifact(remapJar) {
             displayName = "LightBlock v$version for $project.minecraft_version"
         }

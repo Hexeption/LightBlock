@@ -116,3 +116,19 @@ curseforge {
         forgeGradleIntegration = false
     }
 }
+
+import com.modrinth.minotaur.TaskModrinthUpload
+
+task publishModrinth (type: TaskModrinthUpload){
+    if (project.hasProperty('modrinth_api_key')) {
+        token = project.getProperty('modrinth_api_key')
+    }
+    projectId = 'RAYYJHp3'
+    versionName = "LightBlock v$version for $project.minecraft_version"
+    changelog = 'A changelog can be found at https://github.com/Hexeption/LightBlock'
+    versionNumber = "$version"
+    uploadFile = jar
+    addGameVersion("$minecraft_version")
+    addLoader('fabric')
+}
+

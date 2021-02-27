@@ -129,7 +129,7 @@ task publishModrinth (type: TaskModrinthUpload){
     versionName = "LightBlock v$version for $project.minecraft_version"
     changelog = 'A changelog can be found at https://github.com/Hexeption/LightBlock'
     versionNumber = "$version"
-    uploadFile = jar
+    uploadFile = remapJar
     addGameVersion("$minecraft_version")
     addLoader('fabric')
 }
